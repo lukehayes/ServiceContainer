@@ -1,0 +1,12 @@
+{
+    "name": "lukehayes/service-container",
+    "authors": [
+        {
+            "name": "lukehayes",
+            "email": "lukepurplehayes@gmail.com"
+        }
+    ],
+    "require": {
+        "psr/container": "^1.0"
+    }
+}
