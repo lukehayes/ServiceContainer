@@ -8,5 +8,14 @@
     ],
     "require": {
         "psr/container": "^1.0"
+    },
+
+    "autoload": {
+        "psr-4":{
+            "ServiceContainer\\" : "src/ServiceContainer"
+        }
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5.1"
     }
 }
