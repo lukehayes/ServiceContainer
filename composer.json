@@ -12,7 +12,7 @@
 
     "autoload": {
         "psr-4":{
-            "ServiceContainer\\" : "src/ServiceContainer"
+            "ServiceContainer\\" : "src/"
         }
     },
     "require-dev": {
