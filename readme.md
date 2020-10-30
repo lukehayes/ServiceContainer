@@ -20,11 +20,6 @@ in the ServiceProvider::boot() method:
             $loader = new \Twig\Loader\FilesystemLoader('templates');
             $this->service = new \Twig\Environment($loader, []);
         }
-
-        public function __invoke()
-        {
-            return $this->service;
-        }
     }
 ```
 
@@ -38,5 +33,6 @@ Then register the newly created service into the service container:
     
     // The object can be retrieved like this:
     $twig = $container->get('twig');
+    // Behind the scenes, ServiceProviderer::__invoke() magic method
 
 ```
