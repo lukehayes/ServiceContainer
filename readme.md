@@ -10,7 +10,8 @@ and making them available to my own projects enabling me to build projects a lot
 Create a class that extends ServiceContainer\ServiceProvider and setup the to be wrapped object code
 in the ServiceProvider::boot() method:
 
-'''php
+```php
+<?php
 
     class TwigService extends ServiceProvider
     {
@@ -25,12 +26,12 @@ in the ServiceProvider::boot() method:
             return $this->service;
         }
     }
-
-'''
+```
 
 Then register the newly created service into the service container:
 
-'''php
+```php
+<?php
 
     $container = new ServiceContainer();
     $container->register('twig', TwigService::class );
@@ -38,4 +39,4 @@ Then register the newly created service into the service container:
     // The object can be retrieved like this:
     $twig = $container->get('twig');
 
-'''
+```
