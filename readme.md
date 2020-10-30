@@ -7,8 +7,9 @@ and making them available to my own projects enabling me to build projects a lot
 
 ## Usage
 
-Create a class that extends ServiceContainer\ServiceProvider and setup the to be wrapped object code
-in the ServiceProvider::boot() method:
+Create a class that extends ServiceContainer\ServiceProvider class and setup the to-be wrapped object code inside the ServiceProvider::boot() method:
+
+#### Example using twig:
 
 ```php
 <?php
