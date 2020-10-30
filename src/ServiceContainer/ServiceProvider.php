@@ -2,44 +2,35 @@
 namespace ServiceContainer;
 
 /**
- * Load all of the services in this file
+ * Service Provider is an abstract class based around the adapter pattern 
+ * that is designed to be used as a wrapper around third party functionality
+ * making it available in your own code base.
+ *
+ * @package ServiceContainer
  */
-class ServiceProvider 
+abstract class ServiceProvider 
 {
     /**
-     * ---------------------------------------------------
-     * Service Providers
-     * ---------------------------------------------------
-     *
+     * @var Object | NULL The underlying instance of the service.
      */
-    public $services = [
-        /** 
-         * Example:
-         *
-         * Twig service
-         *
-         * 'twig'=> \Symfony\Service\TwigService::class
-         */
-    ];
-
+    protected $service = NULL;
 
     /**
-     * Register a new service inside the service provider. This method 
-     * is meant to be used when defined as an object inside another class.
+     * Any setup for the service should be defined in this method.
      *
-     * @param string $key The name of the key to register the service with.
-     * @param string $class The name of the class to register.
-     *
-     * @return bool
+     * @return void
      */
-    public function register(string $key, string $class) 
-    {
-        if(array_key_exists($key, $this->services)) {
-            return false;
-        } else {
-            $this->services[$key] = $class;
-            return true;
-        }
-    }
+    abstract public function boot();
+    
+    /**
+     * __invoke() magic method has been defined as abstract here
+     * so that all services will return the service property
+     * when it has been called.
+     *
+     * i.e return $this->service;
+     *
+     * @return mixed Access to the underlying service.
+     */
+    abstract public function __invoke();
 }
 
