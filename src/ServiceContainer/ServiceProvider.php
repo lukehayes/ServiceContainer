@@ -31,6 +31,9 @@ abstract class ServiceProvider
      *
      * @return mixed Access to the underlying service.
      */
-    abstract public function __invoke();
+    public function __invoke()
+    {
+        return $this->service;
+    }
 }
 
