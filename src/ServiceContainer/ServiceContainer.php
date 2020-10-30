@@ -6,25 +6,20 @@ use ServiceContainer\Exception\ServiceNotFoundException;
 use ServiceContainer\ServiceProvider;
 
 /**
- * Cappuccino ServiceContainer
+ * Service Container holds all of the services that extend ServiceContainer\ServiceProvider and
+ * have been registered inside it.
+ *
+ * @package ServiceContainer
  */
 class ServiceContainer implements ContainerInterface
 {
-    /**
-     * @var Object All of the services available to the service provider object.
-     */
-    private $provider;
-
     /* @var array<Object> All of the services available to the service container.*/
     private $services = [];
 
-
-    public function __construct(ServiceProvider $provider) 
+    public function __construct() 
     {
-        $this->provider = $provider;
-        $this->initialize();
+        //$this->initialize();
     }
-
 
     /**
      * Instantiate all of the services available inside the service provider.
@@ -33,13 +28,12 @@ class ServiceContainer implements ContainerInterface
      */
     public function initialize() 
     {
-        foreach ($this->provider->services as $key => $service) {
+        foreach ($this->services as $key => $service) {
             $serviceInstance = new $service();
             $serviceInstance->boot();
             $this->services[$key] = $serviceInstance;
         }
     }
-
 
     /**
      * Finds an entry of the container by its identifier and returns it.
@@ -77,7 +71,6 @@ class ServiceContainer implements ContainerInterface
         return isset($this->services[$id]) ?? 0;
     }
 
-
     /**
      * Register a service to the service container so that it is available to use.
      *
@@ -91,7 +84,8 @@ class ServiceContainer implements ContainerInterface
         if ($this->has($id)) {
             return false;
         }else {
-            $this->services[$id] = $service;
+            $this->services[$id] = new $service;
+            $this->services[$id]->boot();
             return true;
         }
     }
