@@ -29,10 +29,10 @@ Then register the newly created service into the service container:
 <?php
 
     $container = new ServiceContainer();
+
     $container->register('twig', TwigService::class );
     
     // The object can be retrieved like this:
     $twig = $container->get('twig');
-    // Behind the scenes, ServiceProviderer::__invoke() magic method
-
 ```
+Behind the scenes, the __invoke() magic method has been called on the wrapped ServiceProvider instance and gives access to that services underlying functionality.
