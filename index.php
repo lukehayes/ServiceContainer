@@ -4,7 +4,6 @@ require "vendor/autoload.php";
 
 use ServiceContainer\ServiceContainer;
 use ServiceContainer\ServiceProvider;
-use ServiceContainer\ServiceInterface;
 
 class App implements ServiceInterface
 {
