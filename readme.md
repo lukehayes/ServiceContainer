@@ -7,12 +7,15 @@ and making them available to my own projects enabling me to build projects a lot
 
 ## Usage
 
-Create a class that extends ServiceContainer\ServiceProvider class and setup the to-be wrapped object code inside the ServiceProvider::boot() method:
+Clone the repository first then `cd` into it and run `composer install` to install all of its dependencies.
+
+When the project is ready, create a class that extends ServiceContainer\ServiceProvider class and setup the to-be wrapped object code inside the ServiceProvider::boot() method:
 
 #### Example using twig:
 
 ```php
 <?php
+    use ServiceContainer\ServiceProvider;
 
     class TwigService extends ServiceProvider
     {
@@ -28,6 +31,7 @@ Then register the newly created service into the service container:
 
 ```php
 <?php
+    use ServiceContainer\ServiceContainer;
 
     $container = new ServiceContainer();
 
