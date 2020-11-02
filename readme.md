@@ -15,6 +15,7 @@ When the project is ready, create a class that extends ServiceContainer\ServiceP
 
 ```php
 <?php
+
     use ServiceContainer\ServiceProvider;
 
     class TwigService extends ServiceProvider
@@ -31,6 +32,7 @@ Then register the newly created service into the service container:
 
 ```php
 <?php
+
     use ServiceContainer\ServiceContainer;
 
     $container = new ServiceContainer();
