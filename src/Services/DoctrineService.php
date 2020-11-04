@@ -20,9 +20,12 @@ class DoctrineService extends ServiceProvider
             'driver' => 'pdo_sqlite',
         );
 
-        dump($connectionParams);
-
         $this->service = DriverManager::getConnection($connectionParams);
+    }
+
+    public function getQueryBuilder()
+    {
+        return $this->service->createQueryBuilder();
     }
 
     public function __invoke()
