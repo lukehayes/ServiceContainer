@@ -1,5 +1,15 @@
 # Service Container
 
+#### MVP-Ready Branch
+
+This branch currently includes these services built in:
+
+* Symfony/Twig template library `Services\TwigService`
+* Doctrine/DBAL database library `Services\DoctrineService`
+
+---
+
+
 This is my simple service container that I have abstracted out of another project.
 
 The goal of this project is to give me a way to add other projects code by wrapping it in the container 
