@@ -16,11 +16,15 @@ class DoctrineService extends ServiceProvider
     public function boot()
     {
         $connectionParams = array(
-            'dbname' => 'database.sqlite',
+            'user' => '',
+            'password' => '',
             'driver' => 'pdo_sqlite',
+            'path' => './database.sqlite'
         );
 
-        $this->service = DriverManager::getConnection($connectionParams);
+        $config = new \Doctrine\DBAL\Configuration();
+
+        $this->service = DriverManager::getConnection($connectionParams, $config);
     }
 
     public function getQueryBuilder()
