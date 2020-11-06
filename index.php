@@ -5,7 +5,7 @@ require "vendor/autoload.php";
 use ServiceContainer\ServiceContainer;
 use ServiceContainer\ServiceProvider;
 
-class App implements ServiceInterface
+class App extends ServiceProvider
 {
     public function boot()
     {
@@ -16,15 +16,9 @@ class App implements ServiceInterface
     }
 }
 
-
-$p = new ServiceProvider();
-
-//$p->register('app', App::class );
-
-$c = new ServiceContainer($p);
+$c = new ServiceContainer();
 $c->register('app', App::class );
 
-dump($p);
 dump($c);
 dump($c->get('app'));
 
