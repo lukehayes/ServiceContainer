@@ -8,6 +8,8 @@ This branch currently includes these services built in:
 * Doctrine/DBAL database library `Services\DoctrineService`
 * Nette/Forms forms library `Services\FormService`
 
+Servicies will be added in the future when the functionality is needed e.g A service that deals with HTTP routing.
+
 ---
 
 
