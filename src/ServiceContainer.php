@@ -51,6 +51,7 @@ class ServiceContainer implements ContainerInterface
             throw new ServiceNotFoundException($id);
         }else {
             // Adding the () calls the services __invoke() magic method
+            // TODO Tidy the invoke call up
             return $this->services[$id]();
         }
     }
