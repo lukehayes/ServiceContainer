@@ -6,6 +6,7 @@ This branch currently includes these services built in:
 
 * Symfony/Twig template library `Services\TwigService`
 * Doctrine/DBAL database library `Services\DoctrineService`
+* Nette/Forms forms library `Services\FormService`
 
 ---
 
