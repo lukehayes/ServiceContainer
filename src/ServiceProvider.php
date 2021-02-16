@@ -2,9 +2,9 @@
 namespace ServiceContainer;
 
 /**
- * Service Provider is an abstract class based around the adapter pattern 
- * that is designed to be used as a wrapper around third party functionality
- * making it available in your own code base.
+ * ServiceProvider is an wrapper class based around the Adapter Pattern.
+ * It is intended to be implemented by any third party functionality
+ * that the user wants to make available inside their application.
  *
  * @package ServiceContainer
  */
