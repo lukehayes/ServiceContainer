@@ -1,5 +1,5 @@
 <?php
-namespace Services;
+namespace ServiceContainer\Services;
 
 use ServiceContainer\ServiceProvider;
 use Doctrine\DBAL\DriverManager;

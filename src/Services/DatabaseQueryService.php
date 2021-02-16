@@ -1,13 +1,13 @@
 <?php
-namespace Services;
+namespace ServiceContainer\Service;
 
 use ServiceContainer\ServiceProvider;
-use Services\DoctrineService;
+use ServiceContainer\Service\DoctrineService;
 
 /**
  * Retrieve a connection to the database through the Doctrine Service class.
  *
- * @package Services;
+ * @package Service;
  */
 class DatabaseQueryService extends ServiceProvider
 {
