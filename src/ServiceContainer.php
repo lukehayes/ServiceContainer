@@ -16,24 +16,10 @@ class ServiceContainer implements ContainerInterface
     /* @var array<Object> All of the services available to the service container.*/
     private $services = [];
 
-    public function __construct() 
-    {
-        //$this->initialize();
-    }
-
     /**
-     * Instantiate all of the services available inside the service provider.
-     *
-     * @return void
+     * Constructor
      */
-    public function initialize() 
-    {
-        foreach ($this->services as $key => $service) {
-            $serviceInstance = new $service();
-            $serviceInstance->boot();
-            $this->services[$key] = $serviceInstance;
-        }
-    }
+    public function __construct() {}
 
     /**
      * Finds an entry of the container by its identifier and returns it.
